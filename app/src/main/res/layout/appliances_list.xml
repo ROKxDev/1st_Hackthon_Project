@@ -16,6 +16,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:id="@+id/tvAppliancesName"
             android:layout_marginStart="10dp"
             android:text="Appliance Name"
             android:textColor="@color/black"
@@ -25,6 +26,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:id="@+id/tvAppliancesModel"
             android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
             android:text="Model Name"
@@ -35,6 +37,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
+            android:id="@+id/tvAppliancesNextServiceDate"
             android:layout_marginTop="10dp"
             android:text="Next Service : 01 Ja 2001"
             android:textColor="#757575"
@@ -45,6 +48,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:id="@+id/btnAppliancesDetails"
             android:layout_marginTop="10dp"
             android:backgroundTint="#3E9441"
             android:text="Appliance Details"

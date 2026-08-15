@@ -158,7 +158,6 @@
                 android:layout_height="1dp"
                 android:background="#F0F0F0" />
 
-            <!-- Service History -->
             <LinearLayout
                 android:id="@+id/llProfileServiceHistory"
                 android:layout_width="match_parent"
@@ -228,7 +227,6 @@
                 android:layout_height="1dp"
                 android:background="#F0F0F0" />
 
-            <!-- Help & Support -->
             <LinearLayout
                 android:id="@+id/llProfileHelpSupport"
                 android:layout_width="match_parent"

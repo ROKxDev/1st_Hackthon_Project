@@ -200,7 +200,7 @@
                     <ImageView
                         android:layout_width="20dp"
                         android:layout_height="20dp"
-                        android:src="@android:drawable/ic_menu_globe" />
+                        android:src="@android:drawable/ic_menu_today" />
 
                     <TextView
                         android:layout_width="0dp"

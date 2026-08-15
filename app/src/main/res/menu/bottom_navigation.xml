@@ -3,28 +3,28 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/NavHome"
+        android:id="@+id/navHome"
         android:icon="@drawable/home_icon"
         app:showAsAction="always"
         android:title="Hame"
         />
 
     <item
-        android:id="@+id/NavAppliances"
+        android:id="@+id/navAppliances"
         android:icon="@drawable/appliances_icon"
         app:showAsAction="always"
         android:title="Appliances"
         />
 
     <item
-        android:id="@+id/NavHistory"
+        android:id="@+id/navHistory"
         android:icon="@drawable/history_icon"
         app:showAsAction="always"
         android:title="History"
         />
 
     <item
-        android:id="@+id/NavProfile"
+        android:id="@+id/navProfile"
         android:icon="@drawable/profile_icon"
         app:showAsAction="always"
         android:title="Profile"
