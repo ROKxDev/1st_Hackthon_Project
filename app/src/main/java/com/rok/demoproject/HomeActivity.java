@@ -8,13 +8,17 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class MainActivity extends AppCompatActivity {
+import com.rok.demoproject.Fragment.HomeFragment;
+
+public class HomeActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_home);
 
-        setContentView(R.layout.activity_main);
+        HomeFragment homeFragment = new HomeFragment();
 
+        getSupportFragmentManager().beginTransaction().replace(R.id.homeFrameLayout,homeFragment).commit();
     }
 }
