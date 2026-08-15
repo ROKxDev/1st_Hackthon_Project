@@ -1,47 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    android:orientation="vertical"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Fragment.AppliancesFragment"
     android:background="@color/white"
-    >
+    android:orientation="vertical"
+    tools:context=".Fragment.AppliancesFragment">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Appliances"
-        android:textSize="22sp"
-        android:textStyle="bold"
-        android:textColor="#000000"
+        android:layout_marginStart="20dp"
         android:layout_marginBottom="16dp"
-        android:layout_marginStart="20dp"/>
+        android:text="Appliances"
+        android:textColor="#000000"
+        android:textSize="22sp"
+        android:textStyle="bold" />
 
     <SearchView
+        android:id="@+id/svAppliancesSrarch"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/svAppliancesSrarch"
-        android:queryHint="Search Appliances"
-        android:iconifiedByDefault="false"
         android:layout_margin="10dp"
-        android:background="@drawable/rectangle"/>
+        android:background="@drawable/rectangle"
+        android:iconifiedByDefault="false"
+        android:queryHint="Search Appliances" />
 
 
     <ListView
+        android:id="@+id/lvAppliancesList"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:id="@+id/lvAppliancesList"/>
+        android:layout_margin="10dp" />
 
     <TextView
+        android:id="@+id/tvSearchDonorsNotFound"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/tvSearchDonorsNotFound"
-        android:text="Donors not found"
         android:gravity="center_horizontal"
-        android:visibility="gone"
-        />
+        android:text="Donors not found"
+        android:visibility="gone" />
 
 </LinearLayout>

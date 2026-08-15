@@ -8,163 +8,280 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:background="#F9F9F9">
+        android:background="#F9F9F9"
+        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="56dp"
-            android:orientation="horizontal"
             android:background="#FFFFFF"
             android:gravity="center_vertical"
+            android:orientation="horizontal"
             android:paddingHorizontal="16dp">
 
             <ImageView
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:src="@android:drawable/ic_menu_revert"/>
+                android:src="@android:drawable/ic_menu_revert" />
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:gravity="center"
                 android:text="Profile"
-                android:textSize="18sp"
-                android:textStyle="bold"
                 android:textColor="#000000"
-                android:gravity="center"/>
+                android:textSize="18sp"
+                android:textStyle="bold" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
+            android:layout_marginBottom="12dp"
             android:background="#FFFFFF"
             android:gravity="center"
-            android:padding="20dp"
-            android:layout_marginBottom="12dp">
+            android:orientation="vertical"
+            android:padding="20dp">
 
             <ImageView
+                android:id="@+id/ivPorfileImg"
                 android:layout_width="70dp"
                 android:layout_height="70dp"
-                android:id="@+id/ivPorfileImg"
-                android:src="@android:drawable/ic_menu_report_image"/>
+                android:src="@android:drawable/ic_menu_report_image" />
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
                 android:id="@+id/tvProfileName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
                 android:text="Shubham Giri"
-                android:textSize="16sp"
-                android:textStyle="bold"
                 android:textColor="#000000"
-                android:layout_marginTop="8dp"/>
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
                 android:id="@+id/tvProfileEmail"
-                android:text="shubhamgiri@gmail.com"
-                android:textSize="12sp"
-                android:textColor="#666666"
-                android:layout_marginTop="2dp"/>
-
-            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/tvProfileMobile"
-                android:text="+91 98765 43210"
-                android:textSize="12sp"
+                android:layout_marginTop="2dp"
+                android:text="shubhamgiri@gmail.com"
                 android:textColor="#666666"
-                android:layout_marginTop="2dp"/>
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tvProfileMobile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="+91 98765 43210"
+                android:textColor="#666666"
+                android:textSize="12sp" />
         </LinearLayout>
 
         <!-- Menu Options -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
+            android:layout_marginBottom="12dp"
             android:background="#FFFFFF"
-            android:paddingHorizontal="16dp"
-            android:layout_marginBottom="12dp">
+            android:orientation="vertical"
+            android:paddingHorizontal="16dp">
 
             <!-- My Appliances -->
             <LinearLayout
+                android:id="@+id/llProfileMyAppliances"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:orientation="horizontal"
                 android:gravity="center_vertical"
-                android:id="@+id/llProfileMyAppliances">
+                android:orientation="horizontal">
 
-                <ImageView android:layout_width="20dp" android:layout_height="20dp" android:src="@android:drawable/ic_menu_agenda"/>
-                <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="My Appliances" android:textSize="14sp" android:textColor="#000000" android:layout_marginStart="16dp"/>
-                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="03  >" android:textSize="14sp" android:textColor="#666666"/>
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@android:drawable/ic_menu_agenda" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_weight="1"
+                    android:text="My Appliances"
+                    android:textColor="#000000"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="03  >"
+                    android:textColor="#666666"
+                    android:textSize="14sp" />
             </LinearLayout>
-            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#F0F0F0"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#F0F0F0" />
 
             <!-- Reminders -->
             <LinearLayout
+                android:id="@+id/llProfileReminder"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:orientation="horizontal"
                 android:gravity="center_vertical"
-                android:id="@+id/llProfileReminder">
-                <ImageView android:layout_width="20dp" android:layout_height="20dp" android:src="@android:drawable/ic_popup_reminder"/>
-                <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Reminders" android:textSize="14sp" android:textColor="#000000" android:layout_marginStart="16dp"/>
-                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text=">" android:textSize="14sp" android:textColor="#666666"/>
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@android:drawable/ic_popup_reminder" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_weight="1"
+                    android:text="Reminders"
+                    android:textColor="#000000"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=">"
+                    android:textColor="#666666"
+                    android:textSize="14sp" />
             </LinearLayout>
-            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#F0F0F0"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#F0F0F0" />
 
             <!-- Service History -->
             <LinearLayout
+                android:id="@+id/llProfileServiceHistory"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:orientation="horizontal"
                 android:gravity="center_vertical"
-                android:id="@+id/llProfileServiceHistory">
-                <ImageView android:layout_width="20dp" android:layout_height="20dp" android:src="@android:drawable/ic_menu_recent_history"/>
-                <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Service History" android:textSize="14sp" android:textColor="#000000" android:layout_marginStart="16dp"/>
-                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text=">" android:textSize="14sp" android:textColor="#666666"/>
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@android:drawable/ic_menu_recent_history" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_weight="1"
+                    android:text="Service History"
+                    android:textColor="#000000"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=">"
+                    android:textColor="#666666"
+                    android:textSize="14sp" />
             </LinearLayout>
-            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#F0F0F0"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#F0F0F0" />
 
             <!-- Settings -->
             <LinearLayout
+                android:id="@+id/llProfileSetting"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:orientation="horizontal"
                 android:gravity="center_vertical"
-                android:id="@+id/llProfileSetting">
-                <ImageView android:layout_width="20dp" android:layout_height="20dp" android:src="@android:drawable/ic_menu_manage"/>
-                <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Settings" android:textSize="14sp" android:textColor="#000000" android:layout_marginStart="16dp"/>
-                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text=">" android:textSize="14sp" android:textColor="#666666"/>
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@android:drawable/ic_menu_manage" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_weight="1"
+                    android:text="Settings"
+                    android:textColor="#000000"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=">"
+                    android:textColor="#666666"
+                    android:textSize="14sp" />
             </LinearLayout>
-            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#F0F0F0"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#F0F0F0" />
 
             <!-- Help & Support -->
             <LinearLayout
+                android:id="@+id/llProfileHelpSupport"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:orientation="horizontal"
                 android:gravity="center_vertical"
-                android:id="@+id/llProfileHelpSupport">
-                <ImageView android:layout_width="20dp" android:layout_height="20dp" android:src="@android:drawable/ic_menu_help"/>
-                <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Help &amp; Support" android:textSize="14sp" android:textColor="#000000" android:layout_marginStart="16dp"/>
-                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text=">" android:textSize="14sp" android:textColor="#666666"/>
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@android:drawable/ic_menu_help" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_weight="1"
+                    android:text="Help &amp; Support"
+                    android:textColor="#000000"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=">"
+                    android:textColor="#666666"
+                    android:textSize="14sp" />
             </LinearLayout>
         </LinearLayout>
 
         <!-- Logout -->
         <LinearLayout
+            android:id="@+id/llProfileLogout"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:orientation="horizontal"
             android:background="#FFFFFF"
             android:gravity="center_vertical"
-            android:paddingHorizontal="16dp"
-            android:id="@+id/llProfileLogout">
-            <ImageView android:layout_width="20dp" android:layout_height="20dp" android:src="@android:drawable/ic_lock_power_off"/>
-            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Logout" android:textSize="14sp" android:textStyle="bold" android:textColor="#D32F2F" android:layout_marginStart="16dp"/>
+            android:orientation="horizontal"
+            android:paddingHorizontal="16dp">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@android:drawable/ic_lock_power_off" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="Logout"
+                android:textColor="#D32F2F"
+                android:textSize="14sp"
+                android:textStyle="bold" />
         </LinearLayout>
 
     </LinearLayout>
