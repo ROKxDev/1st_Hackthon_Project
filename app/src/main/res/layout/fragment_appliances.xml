@@ -22,7 +22,7 @@
     <SearchView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/svSearchDonors"
+        android:id="@+id/svAppliancesSrarch"
         android:queryHint="Search Appliances"
         android:iconifiedByDefault="false"
         android:layout_margin="10dp"
@@ -33,7 +33,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:id="@+id/lvSearchDonorsList"/>
+        android:id="@+id/lvAppliancesList"/>
 
     <TextView
         android:layout_width="match_parent"
