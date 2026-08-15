@@ -19,5 +19,6 @@ public class HomeActivity extends AppCompatActivity {
 
         HomeFragment homeFragment = new HomeFragment();
 
+        getSupportFragmentManager().beginTransaction().replace(R.id.homeFrameLayout,homeFragment).commit();
     }
 }
