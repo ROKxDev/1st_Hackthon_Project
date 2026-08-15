@@ -8,16 +8,22 @@ import android.widget.EditText;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.rok.demoproject.LoginPage_Activity;
+import com.loopj.android.http.AsyncHttpClient;
+import com.loopj.android.http.AsyncHttpResponseHandler;
+import com.loopj.android.http.RequestParams;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import cz.msebera.android.httpclient.Header;
 
 public class RegistrationActivity extends AppCompatActivity {
 
-     EditText etFullName, etEmail, etPhone, etPassword, etConfirmPassword;
-     Button btnSignUp;
+    EditText etFullName, etEmail, etPhone, etPassword, etConfirmPassword;
+    Button btnSignUp;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration);
 
@@ -29,8 +35,7 @@ public class RegistrationActivity extends AppCompatActivity {
         btnSignUp = findViewById(R.id.btnSignUp);
 
         // Sign Up Button Click Listener
-        btnSignUp.setOnClickListener(new View.OnClickListener()
-        {
+        btnSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 validateInputs();
@@ -38,81 +43,94 @@ public class RegistrationActivity extends AppCompatActivity {
         });
     }
 
-    private void validateInputs()
-    {
+    private void validateInputs() {
         String fullName = etFullName.getText().toString().trim();
         String email = etEmail.getText().toString().trim();
         String phone = etPhone.getText().toString().trim();
         String password = etPassword.getText().toString().trim();
         String confirmPassword = etConfirmPassword.getText().toString().trim();
 
-        if (fullName.isEmpty())
-        {
+        if (fullName.isEmpty()) {
             etFullName.setError("Please Enter Your Name");
             etFullName.requestFocus();
-        }
-        else if (phone.isEmpty())
-        {
+        } else if (phone.isEmpty()) {
             etPhone.setError("Please Enter your Mobile No");
             etPhone.requestFocus();
-        }
-        else if (phone.length() != 10)
-        {
+        } else if (phone.length() != 10) {
             etPhone.setError("Mobile Number Length Must be 10");
             etPhone.requestFocus();
-        }
-        else if (email.isEmpty())
-        {
+        } else if (email.isEmpty()) {
             etEmail.setError("Please Enter Your Email ID");
             etEmail.requestFocus();
-        }
-        else if (!email.contains("@") || !email.contains(".com"))
-        {
+        } else if (!email.contains("@") || !email.contains(".com")) {
             etEmail.setError("Please Enter Valid Email ID");
             etEmail.requestFocus();
-        }
-        else if (password.isEmpty())
-        {
+        } else if (password.isEmpty()) {
             etPassword.setError("Please Enter Your Password");
             etPassword.requestFocus();
-        }
-        else if (password.length() < 8)
-        {
+        } else if (password.length() < 8) {
             etPassword.setError("Password Must be more than 8");
             etPassword.requestFocus();
-        }
-        else if (!password.matches(".*[A-Z].*"))
-        {
+        } else if (!password.matches(".*[A-Z].*")) {
             etPassword.setError("Password Must contain 1 Upper Case");
             etPassword.requestFocus();
-        }
-        else if (!password.matches(".*[a-z].*"))
-        {
+        } else if (!password.matches(".*[a-z].*")) {
             etPassword.setError("Password Must contain 1 Lower Case");
             etPassword.requestFocus();
-        }
-        else if (!password.matches(".*[0-9].*"))
-        {
+        } else if (!password.matches(".*[0-9].*")) {
             etPassword.setError("Password Must contain 1 Number");
             etPassword.requestFocus();
-        }
-        else if (!password.matches(".*[@,$,%,&,!].*"))
-        {
+        } else if (!password.matches(".*[@,$,%,&,!].*")) {
             etPassword.setError("Password Must contain 1 Special Symbol");
             etPassword.requestFocus();
-        }
-        else if (!password.equals(confirmPassword))
-        {
+        } else if (!password.equals(confirmPassword)) {
             etConfirmPassword.setError("Password and Confirm Password not match");
             etConfirmPassword.requestFocus();
+        } else {
+            // सर्व व्हॅलिडेशन पास झाल्यावर AsyncHttpClient मेथड कॉल केली
+            registerUserToDatabase(fullName, email, phone, password);
         }
-        else
-        {
-            Toast.makeText(RegistrationActivity.this, "Registration Successful!", Toast.LENGTH_SHORT).show();
+    }
 
-            Intent intent = new Intent(RegistrationActivity.this, LoginPage_Activity.class);
-            startActivity(intent);
-            finish();
-        }
+    // AsyncHttpClient वापरून डेटाबेसमध्ये डेटा पाठवणे
+    private void registerUserToDatabase(final String fullName, final String email, final String phone, final String password) {
+        String url = Url.URL_REGISTER;
+
+        AsyncHttpClient client = new AsyncHttpClient();
+        RequestParams params = new RequestParams();
+
+        // PHP मधील $_POST च्या नावाशी हे जुळले पाहिजे
+        params.put("fullname", fullName);
+        params.put("email", email);
+        params.put("mobileno", phone);
+        params.put("password", password);
+
+        client.post(url, params, new AsyncHttpResponseHandler() {
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
+                String response = new String(responseBody);
+                try {
+                    JSONObject jsonObject = new JSONObject(response);
+                    int success = jsonObject.getInt("success");
+                    String message = jsonObject.getString("message");
+
+                    Toast.makeText(RegistrationActivity.this, message, Toast.LENGTH_SHORT).show();
+
+                    if (success == 1) {
+                        Intent intent = new Intent(RegistrationActivity.this, LoginPage_Activity.class);
+                        startActivity(intent);
+                        finish();
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                    Toast.makeText(RegistrationActivity.this, "JSON Error: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
+                Toast.makeText(RegistrationActivity.this, "Connection Error: " + error.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }
