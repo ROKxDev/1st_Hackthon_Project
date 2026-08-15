@@ -1,6 +1,5 @@
 package com.rok.demoproject;
 
-import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.activity.EdgeToEdge;
@@ -11,14 +10,15 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.rok.demoproject.Fragment.HomeFragment;
 
-public class MainActivity extends AppCompatActivity {
+public class HomeActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_home);
 
-        Intent intent = new Intent(MainActivity.this, HomeActivity.class);
-        startActivity(intent);
+        HomeFragment homeFragment = new HomeFragment();
+
+        getSupportFragmentManager().beginTransaction().replace(R.id.homeFrameLayout,homeFragment).commit();
     }
 }
