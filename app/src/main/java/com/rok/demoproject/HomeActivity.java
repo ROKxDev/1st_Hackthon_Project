@@ -8,7 +8,6 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import com.rok.demoproject.Fragment.AppliancesFragment;
 import com.rok.demoproject.Fragment.HomeFragment;
 
 public class HomeActivity extends AppCompatActivity {
@@ -19,8 +18,6 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
 
         HomeFragment homeFragment = new HomeFragment();
-        AppliancesFragment appliancesFragment = new AppliancesFragment();
 
-        getSupportFragmentManager().beginTransaction().replace(R.id.homeFrameLayout,appliancesFragment).commit();
     }
 }
