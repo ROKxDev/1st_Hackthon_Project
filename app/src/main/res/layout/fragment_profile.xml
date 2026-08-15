@@ -47,13 +47,11 @@
             <ImageView
                 android:layout_width="70dp"
                 android:layout_height="70dp"
-                android:id="@+id/ivPorfileImg"
                 android:src="@android:drawable/ic_menu_report_image"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/tvProfileName"
                 android:text="Shubham Giri"
                 android:textSize="16sp"
                 android:textStyle="bold"
@@ -63,7 +61,6 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/tvProfileEmail"
                 android:text="shubhamgiri@gmail.com"
                 android:textSize="12sp"
                 android:textColor="#666666"
@@ -72,7 +69,6 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/tvProfileMobile"
                 android:text="+91 98765 43210"
                 android:textSize="12sp"
                 android:textColor="#666666"
@@ -93,9 +89,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:orientation="horizontal"
-                android:gravity="center_vertical"
-                android:id="@+id/llProfileMyAppliances">
-
                 <ImageView android:layout_width="20dp" android:layout_height="20dp" android:src="@android:drawable/ic_menu_agenda"/>
                 <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="My Appliances" android:textSize="14sp" android:textColor="#000000" android:layout_marginStart="16dp"/>
                 <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="03  >" android:textSize="14sp" android:textColor="#666666"/>
@@ -107,8 +100,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:orientation="horizontal"
-                android:gravity="center_vertical"
-                android:id="@+id/llProfileReminder">
                 <ImageView android:layout_width="20dp" android:layout_height="20dp" android:src="@android:drawable/ic_popup_reminder"/>
                 <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Reminders" android:textSize="14sp" android:textColor="#000000" android:layout_marginStart="16dp"/>
                 <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text=">" android:textSize="14sp" android:textColor="#666666"/>
@@ -120,8 +111,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:orientation="horizontal"
-                android:gravity="center_vertical"
-                android:id="@+id/llProfileServiceHistory">
                 <ImageView android:layout_width="20dp" android:layout_height="20dp" android:src="@android:drawable/ic_menu_recent_history"/>
                 <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Service History" android:textSize="14sp" android:textColor="#000000" android:layout_marginStart="16dp"/>
                 <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text=">" android:textSize="14sp" android:textColor="#666666"/>
@@ -133,8 +122,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:orientation="horizontal"
-                android:gravity="center_vertical"
-                android:id="@+id/llProfileSetting">
                 <ImageView android:layout_width="20dp" android:layout_height="20dp" android:src="@android:drawable/ic_menu_manage"/>
                 <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Settings" android:textSize="14sp" android:textColor="#000000" android:layout_marginStart="16dp"/>
                 <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text=">" android:textSize="14sp" android:textColor="#666666"/>
@@ -146,8 +133,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:orientation="horizontal"
-                android:gravity="center_vertical"
-                android:id="@+id/llProfileHelpSupport">
                 <ImageView android:layout_width="20dp" android:layout_height="20dp" android:src="@android:drawable/ic_menu_help"/>
                 <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Help &amp; Support" android:textSize="14sp" android:textColor="#000000" android:layout_marginStart="16dp"/>
                 <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text=">" android:textSize="14sp" android:textColor="#666666"/>
@@ -161,8 +146,6 @@
             android:orientation="horizontal"
             android:background="#FFFFFF"
             android:gravity="center_vertical"
-            android:paddingHorizontal="16dp"
-            android:id="@+id/llProfileLogout">
             <ImageView android:layout_width="20dp" android:layout_height="20dp" android:src="@android:drawable/ic_lock_power_off"/>
             <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Logout" android:textSize="14sp" android:textStyle="bold" android:textColor="#D32F2F" android:layout_marginStart="16dp"/>
         </LinearLayout>
